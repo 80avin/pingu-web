@@ -1,0 +1,22 @@
+{
+  "name": "Pingu App",
+  "short_name": "Pingu",
+  "description": "The world's best airhorner, and it's free",
+  "icons": [
+    {
+      "src": "/assets/blank.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/assets/blank.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+      ],
+  "start_url": "/index.html",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#2196F3",
+  "theme_color": "#2196F3"
+}

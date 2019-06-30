@@ -1,0 +1,73 @@
+/* Custom Stylesheet */
+a {
+	color: #00a6db;
+}
+
+.col {
+  text-align: center;
+}
+
+main {
+  padding-top: 24px;
+}
+
+.btn {
+  width: 100px;
+}
+
+.main-container {
+	max-width: 250px;
+}
+
+.status-text {
+	text-align: center;
+}
+
+
+.blue {
+  background-color: #00a6db !important;
+}
+.pink {
+  background-color: #d71149 !important;
+}
+
+/* Push footer to bottom of page */
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+@keyframes expand{
+    from{
+        max-height: 0;
+        transform: scaleY(0);
+        opacity: 0;
+    }
+}
+
+.choreography-container .select-wrapper{
+    animation: expand 0.5s ease-in-out;
+}
+
+.send-gesture i, .clear-gesture i, .remove-gesture i{
+    transform-origin: 50% 50% -40px;
+    backface-visibility: visible;
+    transition: all 0.5s ease-in-out;
+}
+.send-gesture i:active, .clear-gesture i:active, .remove-gesture i:active{
+    transition: 0s;
+    transform: rotateY(-360deg);
+}
+.add-gesture i{
+    transform-origin: center;
+    transition: all 0.1s ease-in-out;
+}
+.add-gesture i:active{
+    transition: 0s;
+    transform: rotateZ(90deg);
+}
