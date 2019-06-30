@@ -1,275 +1,289 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel=manifest href="./manifest.webapp">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="apple-mobile-web-app-capable" content="yes">
     <title>Pingu Robot</title>
 
     <!--Import materialize.css framework-->
-	<meta name="viewport" content="width=device-width, user-scalable=no" />
-  <link rel=manifest href="./manifest.webapp">
-  <meta name=mobile-web-app-capable content=yes>
-  <meta name=apple-mobile-web-app-capable content=yes>
-  <meta name=application-name content="Pingu App">
-  <meta name=apple-mobile-web-app-status-bar-style content=black>
-  <meta name=apple-mobile-web-app-title content="Pingu App">
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <meta name=mobile-web-app-capable content=yes>
+    <meta name=apple-mobile-web-app-capable content=yes>
+    <meta name=application-name content="Pingu App">
+    <meta name=apple-mobile-web-app-status-bar-style content=black>
+    <meta name=apple-mobile-web-app-title content="Pingu App">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <link type="text/css" href="css/icons.css" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  </head>
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+</head>
 
-  <body>
+<body>
 
     <!-- Nav bar -->
     <nav class="grey darken-4 nav-extended" role="navigation">
-      <div class="nav-wrapper container">
-        <a id="logo-container" href="#" class="brand-logo">
-          Pingu Robot
-        </a>
-        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-        <ul class="right hide-on-med-and-down">
-        <li><a class="dropdown-trigger" href="#!" data-target="dropdown-mode">Mode<i class="material-icons right">arrow_drop_down</i></a></li>
-        <li><a class="waves-effect waves-light modal-trigger" href="#modal-speed">Speed</a></li>
-        <li><div class="divider"></div></li>
-        <li><a class="waves-effect waves-light ask-ip" >Set IP</a></li>
-        <li><a class="waves-effect waves-light modal-trigger" href="#modal-about" >About</a></li>
-      </ul>
+        <div class="nav-wrapper container">
+            <a id="logo-container" href="#" class="brand-logo">
+                Pingu Robot
+            </a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a class="dropdown-trigger" href="#!" data-target="dropdown-mode">Mode<i
+                            class="material-icons right">arrow_drop_down</i></a></li>
+                <li><a class="waves-effect waves-light modal-trigger" href="#modal-speed">Speed</a></li>
+                <li>
+                    <div class="divider"></div>
+                </li>
+                <li><a class="waves-effect waves-light ask-ip">Set IP</a></li>
+                <li><a class="waves-effect waves-light modal-trigger" href="#modal-about">About</a></li>
+            </ul>
 
-      </div>
-    <div class="nav-content">
-      <ul class="tabs tabs-transparent">
-        <li class="tab"><a class="active" href="#tab-main">Main</a></li>
-        <li class="tab"><a href="#tab-steps">Steps</a></li>
-        <li class="tab"><a href="#tab-music">Music</a></li>
-        <li class="tab"><a href="#tab-choreograph">Choreograph</a></li>
-      </ul>
-    </div>
+        </div>
+        <div class="nav-content">
+            <ul class="tabs tabs-transparent">
+                <li class="tab"><a class="active" href="#tab-main">Main</a></li>
+                <li class="tab"><a href="#tab-steps">Steps</a></li>
+                <li class="tab"><a href="#tab-music">Music</a></li>
+                <li class="tab"><a href="#tab-choreograph">Choreograph</a></li>
+            </ul>
+        </div>
     </nav>
-        <ul class="sidenav" id="mobile-demo">
-        <li><a class="dropdown-trigger" href="#!" data-target="dropdown-mode-side">Mode<i class="material-icons right">arrow_drop_down</i></a></li>
+    <ul class="sidenav" id="mobile-demo">
+        <li><a class="dropdown-trigger" href="#!" data-target="dropdown-mode-side">Mode<i
+                    class="material-icons right">arrow_drop_down</i></a></li>
         <li><a class="waves-effect waves-light modal-trigger" href="#modal-speed">Speed</a></li>
-        <li><div class="divider"></div></li>
-        <li><a class="waves-effect waves-light ask-ip" >Set IP</a></li>
-        <li><a class="waves-effect waves-light modal-trigger" href="#modal-about" >About</a></li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li><a class="waves-effect waves-light ask-ip">Set IP</a></li>
+        <li><a class="waves-effect waves-light modal-trigger" href="#modal-about">About</a></li>
         <li class="no-padding">
-      </ul>
+    </ul>
     <ul id="dropdown-mode" class="dropdown-content">
-        <li><a class="btn-command waves-effect waves-light" data-command="J" data-arg1="1" >Dance</a></li>
-        <li><a class="btn-command waves-effect waves-light" data-command="J" data-arg1="2" >Avoid</a></li>
-        <li><a class="btn-command waves-effect waves-light" data-command="J" data-arg1="3" >Noise</a></li>
-        <li><a class="btn-command waves-effect waves-light" data-command="J" data-arg1="4" >App</a></li>
+        <li><a class="btn-command waves-effect waves-light" data-command="J" data-arg1="1">Dance</a></li>
+        <li><a class="btn-command waves-effect waves-light" data-command="J" data-arg1="2">Avoid</a></li>
+        <li><a class="btn-command waves-effect waves-light" data-command="J" data-arg1="3">Noise</a></li>
+        <li><a class="btn-command waves-effect waves-light" data-command="J" data-arg1="4">App</a></li>
     </ul>
     <ul id="dropdown-mode-side" class="dropdown-content">
-        <li><a class="btn-command waves-effect waves-light" data-command="J" data-arg1="1" >Dance</a></li>
-        <li><a class="btn-command waves-effect waves-light" data-command="J" data-arg1="2" >Avoid</a></li>
-        <li><a class="btn-command waves-effect waves-light" data-command="J" data-arg1="3" >Noise</a></li>
-        <li><a class="btn-command waves-effect waves-light" data-command="J" data-arg1="4" >App</a></li>
+        <li><a class="btn-command waves-effect waves-light" data-command="J" data-arg1="1">Dance</a></li>
+        <li><a class="btn-command waves-effect waves-light" data-command="J" data-arg1="2">Avoid</a></li>
+        <li><a class="btn-command waves-effect waves-light" data-command="J" data-arg1="3">Noise</a></li>
+        <li><a class="btn-command waves-effect waves-light" data-command="J" data-arg1="4">App</a></li>
     </ul>
 
     <main>
-      <!-- content -->
-      <div class="col s12" id="tab-main">
-        <!-- Upper controls -->
-        <div class="container main-container" >
-        <div class="row">
-          <div class="col s4 offset-s4">
-            <a class="btn-command btn-floating btn-large waves-effect waves-light blue btn-steps" data-command="M" data-arg1="1" data-arg2="1000">
-              <i class="material-icons">keyboard_arrow_up</i>
-            </a>
-          </div>
+        <!-- content -->
+        <div class="col s12" id="tab-main">
+            <!-- Upper controls -->
+            <div class="container main-container">
+                <div class="row">
+                    <div class="col s4 offset-s4">
+                        <a class="btn-command btn-floating btn-large waves-effect waves-light blue btn-steps"
+                            data-command="M" data-arg1="1" data-arg2="1000">
+                            <i class="material-icons">keyboard_arrow_up</i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col s4">
+                        <a class="btn-command btn-floating btn-large waves-effect waves-light blue btn-steps"
+                            data-command="M" data-arg1="3" data-arg2="1000">
+                            <i class="material-icons">keyboard_arrow_left</i>
+                        </a>
+                    </div>
+                    <div class="col s4">
+                        <a class="btn-command btn-floating btn-large waves-effect waves-light light-blue darken-4"
+                            data-command="home">
+                            <i class="material-icons">crop_square</i>
+                        </a>
+                    </div>
+                    <div class="col s4">
+                        <a class="btn-command btn-floating btn-large waves-effect waves-light blue btn-steps"
+                            data-command="M" data-arg1="4" data-arg2="1000">
+                            <i class="material-icons">keyboard_arrow_right</i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col s4 offset-s4">
+                        <a class="btn-command btn-floating btn-large waves-effect waves-light blue btn-steps"
+                            data-command="M" data-arg1="2" data-arg2="1000">
+                            <i class="material-icons">keyboard_arrow_down</i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Lower controls -->
+                <div class="row" style="margin-top: 48px;">
+                    <div class="col s6">
+                        <a class="btn-command waves-effect waves-light btn pink" data-command="moon">
+                            moon
+                        </a>
+                    </div>
+                    <div class="col s6">
+                        <a class="btn-command waves-effect waves-light btn pink" data-command="updown">
+                            updown
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s6">
+                        <a class="btn-command waves-effect waves-light btn pink" data-command="bend">
+                            bend
+                        </a>
+                    </div>
+                    <div class="col s6">
+                        <a class="btn-command waves-effect waves-light btn pink" data-command="flap">
+                            flap
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="row">
-          <div class="col s4">
-            <a class="btn-command btn-floating btn-large waves-effect waves-light blue btn-steps" data-command="M" data-arg1="3" data-arg2="1000">
-              <i class="material-icons">keyboard_arrow_left</i>
-            </a>
-          </div>
-          <div class="col s4">
-            <a class="btn-command btn-floating btn-large waves-effect waves-light light-blue darken-4" data-command="home">
-              <i class="material-icons">crop_square</i>
-            </a>
-          </div>
-          <div class="col s4">
-            <a class="btn-command btn-floating btn-large waves-effect waves-light blue btn-steps" data-command="M" data-arg1="4" data-arg2="1000">
-              <i class="material-icons">keyboard_arrow_right</i>
-            </a>
-          </div>
+        <div class="col s12" id="tab-steps">
+            <!-- Upper controls -->
+            <div class="container main-container steps-container">
+            </div>
         </div>
 
-        <div class="row">
-          <div class="col s4 offset-s4">
-            <a class="btn-command btn-floating btn-large waves-effect waves-light blue btn-steps" data-command="M" data-arg1="2" data-arg2="1000">
-              <i class="material-icons">keyboard_arrow_down</i>
-            </a>
-          </div>
+        <div class="col s12" id="tab-music">
+            <div class="container main-container music-container">
+            </div>
         </div>
-
-        <!-- Lower controls -->
-        <div class="row" style="margin-top: 48px;">
-          <div class="col s6">
-            <a class="btn-command waves-effect waves-light btn pink" data-command="moon">
-              moon
-            </a>
-          </div>
-          <div class="col s6">
-            <a class="btn-command waves-effect waves-light btn pink" data-command="updown">
-              updown
-            </a>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col s6">
-            <a class="btn-command waves-effect waves-light btn pink" data-command="bend">
-              bend
-            </a>
-          </div>
-          <div class="col s6">
-            <a class="btn-command waves-effect waves-light btn pink" data-command="flap">
-              flap
-            </a>
-          </div>
-        </div>
-      </div>
-      </div>
-      
-      <div class="col s12" id="tab-steps">
-        <!-- Upper controls -->
-        <div class="container main-container steps-container" >
-      </div>
-      </div>
-      
-      <div class="col s12" id="tab-music">
-        <div class="container main-container music-container" >
-        </div>
-      </div>
-      <div class="col s12" id="tab-choreograph">
-        <div class="container main-container" >
+        <div class="col s12" id="tab-choreograph">
+            <div class="container main-container">
                 <div class="choreography-container"></div>
                 <div class="row">
-                        <div class="col s3">
-                                <a class="btn-floating btn-large waves-effect waves-light blue send-gesture">
-                                    <i class="material-icons">send</i>
-                                  </a>
-                                <label>Step 4</label>
-                        </div>
-                        <div class="col s3">
-                                <a class="btn-floating btn-large waves-effect waves-light blue add-gesture">
-                                    <i class="material-icons">add</i>
-                                  </a>
-                                <label>Step 4</label>
-                        </div>
-                        <div class="col s3">
-                                <a class="btn-floating btn-large waves-effect waves-light red remove-gesture">
-                                    <i class="material-icons">remove</i>
-                                  </a>
-                                <label>Step 4</label>
-                        </div>
-                        <div class="col s3">
-                          <a class="btn-floating btn-large waves-effect waves-light red clear-gesture">
-                              <i class="material-icons">clear_all</i>
-                            </a>
-                          <label>Step 4</label>
-                        </div>
-                      </div>
+                    <div class="col s3">
+                        <a class="btn-floating btn-large waves-effect waves-light blue send-gesture">
+                            <i class="material-icons">send</i>
+                        </a>
+                        <label>Step 4</label>
+                    </div>
+                    <div class="col s3">
+                        <a class="btn-floating btn-large waves-effect waves-light blue add-gesture">
+                            <i class="material-icons">add</i>
+                        </a>
+                        <label>Step 4</label>
+                    </div>
+                    <div class="col s3">
+                        <a class="btn-floating btn-large waves-effect waves-light red remove-gesture">
+                            <i class="material-icons">remove</i>
+                        </a>
+                        <label>Step 4</label>
+                    </div>
+                    <div class="col s3">
+                        <a class="btn-floating btn-large waves-effect waves-light red clear-gesture">
+                            <i class="material-icons">clear_all</i>
+                        </a>
+                        <label>Step 4</label>
+                    </div>
+                </div>
 
+            </div>
         </div>
-      </div>
-      
+
     </main>
 
     <!-- Footer -->
     <footer class="page-footer grey darken-4" style="padding-top: 0;">
-      <div class="footer-copyright">
-        <div class="container">
-        Made by <i class="material-icons">clear_all</i>
+        <div class="footer-copyright">
+            <div class="container">
+                Made with <i class="material-icons">favorite</i>
+            </div>
         </div>
-      </div>
     </footer>
 
     <!-- Modal -->
     <div id="modal-prompt" class="modal">
-      <div class="modal-content">
-        <!-- messages -->
-        <p class="status-text red-text"></p>
-        <h4>Setup</h4>
-        <p>What is the URL of your device?</p>
+        <div class="modal-content">
+            <!-- messages -->
+            <p class="status-text red-text"></p>
+            <h4>Setup</h4>
+            <p>What is the URL of your device?</p>
 
-        <div class="row">
-          <div class="input-field col s12">
-            <i class="material-icons prefix">public</i>
-            <input id="url" type="text" value="http://pingu.local" class="validate">
-          <label for="url">URL</label>
-          <span class="helper-text">Example: http://pingu.local</span>
-          </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">public</i>
+                    <input id="url" type="text" value="http://pingu.local" class="validate">
+                    <label for="url">URL</label>
+                    <span class="helper-text">Example: http://pingu.local</span>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="modal-footer">
-        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Continue</a>
-      </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Continue</a>
+        </div>
     </div>
 
-      <!-- Modal Structure -->
-      <div id="modal-about" class="modal">
+    <!-- Modal Structure -->
+    <div id="modal-about" class="modal">
         <div class="modal-content">
-        <h4>About</h4>
-        <p>Made by IndiaFirst Robotics</p>
-        <ul>
-            <label>Designer</label>
-            <li>Pushkaraj Salunke</li>
-        </ul>
-		
-		<ul>
-            <label>Developers</label>
-            <li>Aniket Singh Rana</li>
-            <li>Avinash Thakur</li>
-        </ul>
+            <h4>About</h4>
+            <p>Made by IndiaFirst Robotics</p>
+            <ul>
+                <label>Designer</label>
+                <li>Pushkaraj Salunke</li>
+            </ul>
+
+            <ul>
+                <label>Developers</label>
+                <li>Aniket Singh Rana</li>
+                <li>Avinash Thakur</li>
+            </ul>
         </div>
-        
+
         <div class="modal-footer">
-        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
         </div>
     </div>
     <!-- Modal Structure -->
-  <div id="modal-speed" class="modal">
-      <div class="modal-content">
-      <h4>Set Speed</h4>
-      <div class="row">
-      <a class="col s4 dropdown-trigger" href="#!" data-target="dropdown-speed">Speed<i class="material-icons right">arrow_drop_down</i></a>
-      <div class="col s8 range-field">
-        <input type="range" id="speed_slider" min="1" max="10" />
-      </div></div>
-    <ul id="dropdown-speed" class="dropdown-content">
-        <li><a class="speed-slow waves-effect waves-light" >Slow</a></li>
-        <li><a class="speed-medium waves-effect waves-light" >Medium</a></li>
-        <li><a class="speed-fast waves-effect waves-light" >Fast</a></li>
-    </ul>
-      </div>
-      
-      <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Accept</a>
-      </div>
-  </div>
+    <div id="modal-speed" class="modal">
+        <div class="modal-content">
+            <h4>Set Speed</h4>
+            <div class="row">
+                <a class="col s4 dropdown-trigger" href="#!" data-target="dropdown-speed">Speed<i
+                        class="material-icons right">arrow_drop_down</i></a>
+                <div class="col s8 range-field">
+                    <input type="range" id="speed_slider" min="1" max="10" />
+                </div>
+            </div>
+            <ul id="dropdown-speed" class="dropdown-content">
+                <li><a class="speed-slow waves-effect waves-light">Slow</a></li>
+                <li><a class="speed-medium waves-effect waves-light">Medium</a></li>
+                <li><a class="speed-fast waves-effect waves-light">Fast</a></li>
+            </ul>
+        </div>
+
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Accept</a>
+        </div>
+    </div>
+
+
+    <div id="modal-install" class="modal bottom-sheet">
+        <div class="modal-content">
+            <h4>Install Pingu App ?</h4>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="btn-install col s6 modal-close waves-effect waves-green btn-flat">Yes</a>
+            <a href="#!" class="col s6 modal-close waves-effect waves-green btn-flat">No</a>
+        </div>
+    </div>
 
     <!--JavaScript at end of body for optimized loading-->
 
     <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <script src="js/app.js"></script>
-    <script>
-    
-if ('serviceWorker'in navigator) {
-    navigator.serviceWorker.register('./sw.js', {
-        scope: '/pingu-web/'
-    }).then(function(registration) {
-        console.log('Service Worker Registered');
-    });
+</body>
 
-    navigator.serviceWorker.ready.then(function(registration) {
-        console.log('Service Worker Ready');
-    });
-  }
-</script>
-  </body>
 </html>
