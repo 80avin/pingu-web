@@ -261,7 +261,7 @@
     
 if ('serviceWorker'in navigator) {
     navigator.serviceWorker.register('./sw.js', {
-        scope: '/'
+        scope: '/pingu-web/'
     }).then(function(registration) {
         console.log('Service Worker Registered');
     });

@@ -14,8 +14,8 @@
       "sizes": "512x512"
     }
       ],
-  "start_url": "/index.html",
-  "scope": "/",
+  "start_url": "/pingu-web/index.html",
+  "scope": "/pingu-web/",
   "display": "standalone",
   "background_color": "#2196F3",
   "theme_color": "#2196F3"
